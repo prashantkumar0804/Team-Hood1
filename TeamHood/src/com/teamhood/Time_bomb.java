@@ -77,6 +77,14 @@ public class Time_bomb extends Activity implements OnClickListener{
 		}
 	}
 	
-	
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		Intent intent=new Intent(Time_bomb.this,Dash_Board.class);
+		startActivity(intent);
+		overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right );
+		finish();
+	}
 
 }

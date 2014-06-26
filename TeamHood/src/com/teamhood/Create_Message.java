@@ -276,4 +276,13 @@ public class Create_Message extends Activity implements OnClickListener{
 		}
 
 	}
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		Intent intent=new Intent(Create_Message.this,Time_bomb.class);
+		startActivity(intent);
+		overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right );
+		finish();
+	}
 }

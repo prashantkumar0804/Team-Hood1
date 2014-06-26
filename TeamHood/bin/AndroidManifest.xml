@@ -74,11 +74,20 @@
               android:windowSoftInputMode="adjustResize"></activity>
         <activity android:name=".Team_Member_List"
             android:screenOrientation="portrait"
-             android:theme="@android:style/Theme.Dialog"
+             
               android:windowSoftInputMode="adjustResize" ></activity>
         <activity android:name=".Dialog_Team__member"
             android:screenOrientation="portrait"
               android:theme="@android:style/Theme.Dialog"></activity>
+        <activity android:name=".File_Sharing"
+            android:screenOrientation="portrait"
+              android:windowSoftInputMode="adjustResize" ></activity>
+        <activity android:name=".All_Files_Screen"
+            android:screenOrientation="portrait"
+              android:windowSoftInputMode="adjustResize" ></activity>
+        <activity android:name=".Profile_Screen"
+            android:screenOrientation="portrait"
+              android:windowSoftInputMode="adjustResize"></activity>
     </application>
 
 </manifest>

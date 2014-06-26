@@ -2,6 +2,7 @@ package com.teamhood;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Display;
@@ -18,12 +19,15 @@ public class Dialog_Team__member extends Activity implements OnClickListener{
 	TextView dialog_team,dialog_direct;
 	ImageView view_cross;
 	int w,h;
+	SharedPreferences sp;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.dialog_team_member);
+		
+		sp = this.getSharedPreferences("TeamHood", MODE_PRIVATE);
 		
 		Typeface font = Typeface.createFromAsset(getAssets(), "NesobriteLt-Regular.ttf");
 		Typeface font2 = Typeface.createFromAsset(getAssets(), "NesobriteRg-Bold.ttf");
@@ -58,6 +62,9 @@ public class Dialog_Team__member extends Activity implements OnClickListener{
 			break;
 			
 		case R.id.dialog_direct:
+			SharedPreferences.Editor editer4 = sp.edit();
+			editer4.putString("Team_Meamber_Screen", "Meassage_Screen");
+			editer4.commit();
 			Intent intent2=new Intent(Dialog_Team__member.this,Team_Member_List.class);
 			
 			startActivity(intent2);

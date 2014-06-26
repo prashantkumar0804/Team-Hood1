@@ -43,10 +43,10 @@ public class Team_Member_List extends Activity implements OnClickListener{
 		Typeface font = Typeface.createFromAsset(getAssets(), "NesobriteLt-Regular.ttf");
 		Typeface font2 = Typeface.createFromAsset(getAssets(), "NesobriteRg-Bold.ttf");
 		
-		LinearLayout.LayoutParams emailparams = new LinearLayout.LayoutParams(w-30, h-30);
+//		LinearLayout.LayoutParams emailparams = new LinearLayout.LayoutParams(w-30, h-30);
 //		emailparams.setMargins(w/32, w/32,w/32, w/32);
 		team_member_list=(LinearLayout)findViewById(R.id.team_member_list);
-		team_member_list.setLayoutParams(emailparams);
+//		team_member_list.setLayoutParams(emailparams);
 		team_member_list_back=(ImageView)findViewById(R.id.team_member_list_back);
 		team_member_list_back.setOnClickListener(this);
 		team_member_list_header_text=(TextView)findViewById(R.id.team_member_list_header_text);
@@ -64,10 +64,17 @@ public class Team_Member_List extends Activity implements OnClickListener{
 		// TODO Auto-generated method stub
 		switch (arg0.getId()) {
 		case R.id.team_member_list_back:
+			if(sp.getString("Team_Meamber_Screen", "").equalsIgnoreCase("Meassage_Screen")){
 			Intent intent=new Intent(Team_Member_List.this,Create_Message.class);
 			startActivity(intent);
 			overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right );
 			finish();
+			}else if(sp.getString("Team_Meamber_Screen", "").equalsIgnoreCase("Deah_Board")){
+				Intent intent=new Intent(Team_Member_List.this,Dash_Board.class);
+				startActivity(intent);
+				overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right );
+				finish();
+			}
 			break;
 
 		default:
@@ -75,6 +82,21 @@ public class Team_Member_List extends Activity implements OnClickListener{
 		}
 	}
 	
-	
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		if(sp.getString("Team_Meamber_Screen", "").equalsIgnoreCase("Meassage_Screen")){
+			Intent intent=new Intent(Team_Member_List.this,Create_Message.class);
+			startActivity(intent);
+			overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right );
+			finish();
+			}else if(sp.getString("Team_Meamber_Screen", "").equalsIgnoreCase("Deah_Board")){
+				Intent intent=new Intent(Team_Member_List.this,Dash_Board.class);
+				startActivity(intent);
+				overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right );
+				finish();
+			}
+	}
 
 }

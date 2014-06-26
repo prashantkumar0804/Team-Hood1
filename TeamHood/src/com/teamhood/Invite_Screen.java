@@ -116,7 +116,7 @@ public class Invite_Screen extends Activity implements OnClickListener{
 		super.onBackPressed();
 		Intent intent=new Intent(Invite_Screen.this,MainActivity.class);
 		startActivity(intent);
-		overridePendingTransition(R.anim.slide_out_right, R.anim.slide_in_right );
+		overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
 		finish();
 	}
 
