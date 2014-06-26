@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/orange_bg"
+    android:orientation="vertical"
+     >   
+    <LinearLayout 
+         android:id="@+id/activity_main"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sign_in_logo" />
+         <LinearLayout 
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center|bottom"
+             android:layout_marginTop="40dp"
+             android:orientation="horizontal"
+             >
+             <TextView 
+                 android:id="@+id/sign_in_botton_text_one"
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:text="Learn about"
+                 android:textSize="22sp"
+               
+                 android:layout_marginTop="30dp"
+                 android:textColor="#fff"/>
+             <TextView 
+                 android:id="@+id/sign_in_botton_text_two"
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:text=" TEAMHOOD"
+                 android:textSize="22sp"
+               
+                 android:layout_marginTop="30dp"
+                 android:textColor="#fff"/>
+         </LinearLayout>
+
+    </LinearLayout>
+     <LinearLayout 
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        
+         <TextView 
+             android:id="@+id/sign_in_edit_heder_text_one"
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:text="Enter your email to sign in or create a new"
+             android:textColor="#fff"
+             android:layout_marginLeft="33dp"
+             android:textSize="27sp"
+             />
+          <TextView 
+             android:id="@+id/sign_in_edit_heder_text_two"
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:text="account."
+             android:textColor="#fff"
+             android:layout_marginLeft="33dp"
+             android:textSize="27sp"
+             />
+         <EditText 
+             android:id="@+id/sign_in_email_edit"
+              android:layout_height="wrap_content"
+              android:layout_width="match_parent"
+             android:paddingLeft="33dp"
+             android:textSize="28sp"
+             android:textColor="#000"
+              android:hint="Email or Username"
+              android:singleLine="true"
+              android:inputType="textEmailAddress"
+              android:background="@drawable/sign_in_edit_bg"/>   
+              <EditText 
+             android:id="@+id/sign_in_password_edit"
+              android:layout_height="wrap_content"
+              android:layout_width="match_parent"
+             android:paddingLeft="33dp"
+             android:textSize="28sp"
+             android:textColor="#000"
+              android:hint="Password"
+              android:inputType="textPassword"
+              android:layout_marginTop="20dp"
+              android:singleLine="true"
+              android:background="@drawable/sign_in_edit_bg"/> 
+              
+         <LinearLayout 
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="right"
+             >
+             <TextView 
+                 android:id="@+id/sign_in_next"
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:text="Next"
+                 android:textSize="28sp"
+                 android:layout_marginRight="14dp"
+                 android:layout_marginTop="30dp"
+                 android:textColor="#fff"/>
+         </LinearLayout>
+         
+         <LinearLayout 
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:gravity="bottom|center_horizontal">
+              <TextView 
+             android:id="@+id/sign_in_forgot_password"
+              android:layout_height="wrap_content"
+              android:layout_width="wrap_content"
+             android:paddingLeft="33dp"
+             android:textSize="28sp"
+             android:textColor="#0000FF"
+              android:text="Forgot Password"
+              android:layout_marginTop="20dp"
+             />    
+         </LinearLayout>
+    </LinearLayout>
+    
+    </LinearLayout>
+

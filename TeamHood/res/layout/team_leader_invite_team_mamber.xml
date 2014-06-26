@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <LinearLayout 
+        android:id="@+id/Team_Leader_invite_Team_mamber"
+        android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/orange_bg" >
+ <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        >
+        <ImageView 
+            android:id="@+id/team_member_back"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+           android:layout_margin="30dp"
+           android:layout_marginLeft="30dp"
+            android:background="@drawable/back_button"/>
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_weight="1">
+        <LinearLayout 
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:background="@drawable/sign_in_logo"></LinearLayout>
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView 
+            android:id="@+id/team_member_text"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="#fff"
+            android:textSize="28sp"
+            android:layout_marginLeft="30dp"
+            android:text="Enter Your company name and invite to your\nteam leader."/>
+         <EditText 
+             android:id="@+id/team_member_companyname"
+              android:layout_height="wrap_content"
+              android:layout_width="match_parent"
+             android:paddingLeft="33dp"
+             android:textSize="28sp"
+             android:textColor="#000"
+             android:singleLine="true"
+              android:hint="Company Name"
+              android:gravity="center_vertical"
+              android:layout_marginTop="20dp"
+              android:background="@drawable/sign_in_edit_bg"/>
+         <EditText 
+             android:id="@+id/team_member_teamname"
+              android:layout_height="wrap_content"
+              android:layout_width="match_parent"
+             android:paddingLeft="33dp"
+             android:textSize="28sp"
+             android:textColor="#000"
+             android:singleLine="true"
+              android:hint="Team Name"
+              android:gravity="center_vertical"
+              android:layout_marginTop="20dp"
+              android:background="@drawable/sign_in_edit_bg"/>
+         <TextView 
+             android:id="@+id/team_leder_invite_team_member"
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginLeft="30dp"
+             android:layout_marginRight="30dp"
+             android:text="INVITE TEAM MEMBER"
+             android:textColor="#db4d2e"
+             android:textSize="28sp"
+             android:layout_marginTop="20dp"
+             android:gravity="center"
+             android:background="@drawable/white_edit_text"/>
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
