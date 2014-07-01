@@ -2,6 +2,7 @@ package com.teamhood;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -14,12 +15,15 @@ public class Profile_Screen extends Activity implements OnClickListener{
 
 	ImageView profile_screen_back,profile_screen_edit;
 	TextView profile_screen_header,profile_screen_noti,profile_screen_TeamName,profile_screen_username;
+	SharedPreferences sp;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.profile_screen);
+		
+		sp = this.getSharedPreferences("TeamHood", MODE_PRIVATE);
 		
 		Typeface font = Typeface.createFromAsset(getAssets(), "NesobriteLt-Regular.ttf");
 		Typeface font2 = Typeface.createFromAsset(getAssets(), "NesobriteRg-Bold.ttf");
@@ -34,8 +38,10 @@ public class Profile_Screen extends Activity implements OnClickListener{
 		profile_screen_noti.setTypeface(font);
 		profile_screen_TeamName=(TextView)findViewById(R.id.profile_screen_TeamName);
 		profile_screen_TeamName.setTypeface(font);
+		profile_screen_TeamName.setText(sp.getString("team_name", ""));
 		profile_screen_username=(TextView)findViewById(R.id.profile_screen_username);
 		profile_screen_username.setTypeface(font2);
+		profile_screen_username.setText(sp.getString("email", ""));
 	}
 	@Override
 	public void onClick(View arg0) {

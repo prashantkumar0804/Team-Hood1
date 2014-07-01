@@ -27,6 +27,7 @@ import android.widget.Toast;
 
 import com.teamhood.Invite_Team;
 import com.teamhood.R;
+import com.teamhood.Time_bomb;
 
 public class Get_Time_bomb_message extends AsyncTask<String , Integer, Void>{
 
@@ -72,10 +73,10 @@ public class Get_Time_bomb_message extends AsyncTask<String , Integer, Void>{
 				Log.d("email//company_name", username+"//"+company_id+"//"+message);
 				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
 				nameValuePairs.add(new BasicNameValuePair("email", username));
-
+  
 				//				nameValuePairs.add(new BasicNameValuePair("username", "ojus@applify.guru"));
-				nameValuePairs.add(new BasicNameValuePair("company_id", "1"));
-				nameValuePairs.add(new BasicNameValuePair("team_id", "3"));
+				nameValuePairs.add(new BasicNameValuePair("company_id", company_id));
+				nameValuePairs.add(new BasicNameValuePair("team_id", team_id));
 				nameValuePairs.add(new BasicNameValuePair("message_text", message));
 				nameValuePairs.add(new BasicNameValuePair("sending_time", sending_time));
 				nameValuePairs.add(new BasicNameValuePair("sender_email", "prashantkumar@applify.guru"));
@@ -102,7 +103,7 @@ public class Get_Time_bomb_message extends AsyncTask<String , Integer, Void>{
 	protected void onPostExecute(Void result1) 
 	{
 		try {
-			/*JSONObject object = (JSONObject) new JSONTokener(responseString).nextValue();
+			JSONObject object = (JSONObject) new JSONTokener(responseString).nextValue();
 			if(object.has("message")){
 				if(object.getString("message").equalsIgnoreCase("OK")){
 					String str = object.getString("response").replace("[", "");
@@ -118,27 +119,29 @@ public class Get_Time_bomb_message extends AsyncTask<String , Integer, Void>{
 
 					}else{
 						JSONObject object1 = (JSONObject) new JSONTokener(str1).nextValue();
-
+						if(object1.has("insert_id")){
 						if(bar.isShowing()){
 							bar.dismiss();
 						}
-						SharedPreferences.Editor editer4 = sp.edit();
-						editer4.putString("company_id", object1.getString("company_id"));
-						editer4.putString("company_name", company_name);
-						
-						editer4.putString("AddType", "team_leder");
-						editer4.commit();
-						Intent intent=new Intent(ctx,Invite_Team.class);
+//						SharedPreferences.Editor editer4 = sp.edit();
+//						editer4.putString("company_id", object1.getString("company_id"));
+//						editer4.putString("company_name", company_name);
+//						
+//						editer4.putString("AddType", "team_leder");
+//						editer4.commit();
+						Toast.makeText(ctx, "Your Message send on time.", 
+								Toast.LENGTH_LONG).show();
+						Intent intent=new Intent(ctx,Time_bomb.class);
 
 						ctx.startActivity(intent);
 						((Activity) ctx).overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
 						((Activity) ctx).finish();
 
-
+						}
 					}
 				}
 
-			}*/
+			}
 			if(bar.isShowing()){
 				bar.dismiss();
 			}

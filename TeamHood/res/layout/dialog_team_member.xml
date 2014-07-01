@@ -51,10 +51,10 @@
 			        android:id="@+id/dialog_team"
 			        android:layout_height="wrap_content"
 			        android:layout_width="match_parent"
-			        android:text="Team"
+			        android:text="@string/Team"
 			       android:gravity="center_horizontal"
 			        android:textColor="#db4d2e"
-			        android:textSize="@dimen/activity_horizontal_margin"/>
+			        android:textSize="@dimen/larg_text_size"/>
 			   </LinearLayout>
 			   <LinearLayout 
 			    android:layout_height="wrap_content"
@@ -70,10 +70,10 @@
 			        android:id="@+id/dialog_direct"
 			        android:layout_height="wrap_content"
 			        android:layout_width="match_parent"
-			        android:text="Direct"
+			        android:text="@string/Direct"
 			        android:gravity="center_horizontal"
 			        android:textColor="#db4d2e"
-			        android:textSize="@dimen/activity_horizontal_margin"/>
+			        android:textSize="@dimen/larg_text_size"/>
 			</LinearLayout>
                
             </LinearLayout>

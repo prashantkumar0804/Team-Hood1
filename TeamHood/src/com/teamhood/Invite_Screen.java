@@ -98,7 +98,7 @@ public class Invite_Screen extends Activity implements OnClickListener{
 		case R.id.invite_create_account:
 			if(invite_password.getText().toString().length()>2){
 				new Get_Create_account(Invite_Screen.this, bar, invite_text_email.getText().toString(), invite_password.getText().toString(), sp).execute("main");
-			}
+			} 
 			else{
 				Toast.makeText(Invite_Screen.this, "Please enter password.", 
 						Toast.LENGTH_LONG).show();

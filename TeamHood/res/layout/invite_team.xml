@@ -23,8 +23,8 @@
             android:id="@+id/invite_team_back"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-           android:layout_margin="30dp"
-           android:layout_marginLeft="30dp"
+           android:layout_margin="20dp"
+         
             android:background="@drawable/back_button"/>
     </LinearLayout>
      <LinearLayout 
@@ -69,7 +69,7 @@
              android:text="Enter the email of the team leaders you want to\ninvite and add them in you company tree."
              android:textColor="#fff"
              android:layout_marginLeft="30dp"
-             android:textSize="26sp"/>
+             android:textSize="@dimen/midel_text_size"/>
          <ScrollView 
              android:id="@+id/invite_team_scroll"
              android:layout_height="match_parent"
@@ -105,7 +105,7 @@
                  android:layout_height="wrap_content"
                  android:layout_width="wrap_content"
                  android:text="Next"
-                 android:textSize="28sp"
+                 android:textSize="@dimen/larg_text_size"
                  android:textColor="#fff"
                  android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp"

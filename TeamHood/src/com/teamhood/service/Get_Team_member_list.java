@@ -25,6 +25,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.teamhood.Dash_Board;
 import com.teamhood.Invite_Team;
 import com.teamhood.R;
 
@@ -72,11 +73,11 @@ public class Get_Team_member_list extends AsyncTask<String , Integer, Void>{
 				nameValuePairs.add(new BasicNameValuePair("email", username));
 
 				//nameValuePairs.add(new BasicNameValuePair("username", "ojus@applify.guru"));
-//				nameValuePairs.add(new BasicNameValuePair("company_id", company_id));
-//				nameValuePairs.add(new BasicNameValuePair("team_id", Team_id));
+				nameValuePairs.add(new BasicNameValuePair("company_id", company_id));
+				nameValuePairs.add(new BasicNameValuePair("team_id", Team_id));
 				
-				nameValuePairs.add(new BasicNameValuePair("company_id", "1"));
-				nameValuePairs.add(new BasicNameValuePair("team_id", "1"));
+//				nameValuePairs.add(new BasicNameValuePair("company_id", "1"));
+//				nameValuePairs.add(new BasicNameValuePair("team_id", "1"));
 				
 				
 				httppost.setEntity(new  UrlEncodedFormEntity(nameValuePairs));
@@ -108,12 +109,12 @@ public class Get_Team_member_list extends AsyncTask<String , Integer, Void>{
 					String str = object.getString("response").replace("[", "");
 					String str1 = str.replace("]", "");
 					System.out.println(str1);
-					if(str1.trim().equalsIgnoreCase("\"Team leder email is required.\""))
+					if(str1.trim().equalsIgnoreCase("\"No record found in this team.\""))
 					{
 						if(bar.isShowing()){
 							bar.dismiss();
 						}
-						Toast.makeText(ctx, "Team leder email is required.", 
+						Toast.makeText(ctx, "No record found in this team.", 
 								Toast.LENGTH_LONG).show();
 
 					}else{
@@ -123,12 +124,12 @@ public class Get_Team_member_list extends AsyncTask<String , Integer, Void>{
 							bar.dismiss();
 						}
 						SharedPreferences.Editor editer4 = sp.edit();
-						editer4.putString("company_id", object1.getString("company_id"));
-						editer4.putString("company_name", object1.getString("company_name"));
+						editer4.putString("team_member_email", object1.getString("team_member_email"));
 						
-						editer4.putString("AddType", "team_leder");
 						editer4.commit();
-						Intent intent=new Intent(ctx,Invite_Team.class);
+						String str2[]=object1.getString("team_member_email").split(",");
+						Log.d("email", str2[0]+"/"+str2[1]);
+						Intent intent=new Intent(ctx,Dash_Board.class);
 
 						ctx.startActivity(intent);
 						((Activity) ctx).overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);

@@ -25,6 +25,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.teamhood.Dash_Board;
 import com.teamhood.Invite_Team;
 import com.teamhood.R;
 
@@ -74,7 +75,7 @@ public class Get_Invite_Team_member extends AsyncTask<String , Integer, Void>{
 				//nameValuePairs.add(new BasicNameValuePair("username", "ojus@applify.guru"));
 				nameValuePairs.add(new BasicNameValuePair("company_name", company_name));
 				nameValuePairs.add(new BasicNameValuePair("team_name", Team_name));
-				nameValuePairs.add(new BasicNameValuePair("team_leder_email", email_list));
+				nameValuePairs.add(new BasicNameValuePair("team_member_email", email_list));
 				Log.d("+2++", "2");
 				
 				httppost.setEntity(new  UrlEncodedFormEntity(nameValuePairs));
@@ -104,22 +105,32 @@ public class Get_Invite_Team_member extends AsyncTask<String , Integer, Void>{
 	protected void onPostExecute(Void result1) 
 	{
 		try {
-			/*JSONObject object = (JSONObject) new JSONTokener(responseString).nextValue();
+			JSONObject object = (JSONObject) new JSONTokener(responseString).nextValue();
 			if(object.has("message")){
 				if(object.getString("message").equalsIgnoreCase("OK")){
 					String str = object.getString("response").replace("[", "");
 					String str1 = str.replace("]", "");
 					System.out.println(str1);
-					if(str1.trim().equalsIgnoreCase("\"Team leder email is required.\""))
+					if(str1.trim().equalsIgnoreCase("\"Your invitations forword of team members.\""))
 					{
 						if(bar.isShowing()){
 							bar.dismiss();
 						}
-						Toast.makeText(ctx, "Team leder email is required.", 
+						SharedPreferences.Editor editer4 = sp.edit();
+						editer4.putString("team_name", Team_name);
+						
+						editer4.putString("company_name", "company_name");
+						editer4.commit();
+						Toast.makeText(ctx, "Your invitations forword of team members.", 
 								Toast.LENGTH_LONG).show();
+						Intent intent=new Intent(ctx,Dash_Board.class);
+
+						ctx.startActivity(intent);
+						((Activity) ctx).overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+						((Activity) ctx).finish();
 
 					}else{
-						JSONObject object1 = (JSONObject) new JSONTokener(str1).nextValue();
+						/*JSONObject object1 = (JSONObject) new JSONTokener(str1).nextValue();
 
 						if(bar.isShowing()){
 							bar.dismiss();
@@ -134,13 +145,13 @@ public class Get_Invite_Team_member extends AsyncTask<String , Integer, Void>{
 
 						ctx.startActivity(intent);
 						((Activity) ctx).overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
-						((Activity) ctx).finish();
+						((Activity) ctx).finish();*/
 
 
 					}
 				}
 
-			}*/
+			}
 			if(bar.isShowing()){
 				bar.dismiss();
 			}

@@ -29,8 +29,8 @@
                  android:id="@+id/sign_in_botton_text_one"
                  android:layout_height="wrap_content"
                  android:layout_width="wrap_content"
-                 android:text="Learn about"
-                 android:textSize="22sp"
+                 android:text="@string/Learn_about"
+                 android:textSize="@dimen/midel_text_size"
                
                  android:layout_marginTop="30dp"
                  android:textColor="#fff"/>
@@ -38,8 +38,8 @@
                  android:id="@+id/sign_in_botton_text_two"
                  android:layout_height="wrap_content"
                  android:layout_width="wrap_content"
-                 android:text=" TEAMHOOD"
-                 android:textSize="22sp"
+                 android:text="@string/TEAMHOOD"
+                 android:textSize="@dimen/midel_text_size"
                
                  android:layout_marginTop="30dp"
                  android:textColor="#fff"/>
@@ -56,28 +56,28 @@
              android:id="@+id/sign_in_edit_heder_text_one"
              android:layout_height="wrap_content"
              android:layout_width="wrap_content"
-             android:text="Enter your email to sign in or create a new"
+             android:text="@string/activity_main_firest_header"
              android:textColor="#fff"
              android:layout_marginLeft="33dp"
-             android:textSize="27sp"
+             android:textSize="@dimen/midel_text_size"
              />
           <TextView 
              android:id="@+id/sign_in_edit_heder_text_two"
              android:layout_height="wrap_content"
              android:layout_width="wrap_content"
-             android:text="account."
+             android:text="@string/activity_main_second_header"
              android:textColor="#fff"
              android:layout_marginLeft="33dp"
-             android:textSize="27sp"
+             android:textSize="@dimen/midel_text_size"
              />
          <EditText 
              android:id="@+id/sign_in_email_edit"
               android:layout_height="wrap_content"
               android:layout_width="match_parent"
              android:paddingLeft="33dp"
-             android:textSize="28sp"
+             android:textSize="@dimen/larg_text_size"
              android:textColor="#000"
-              android:hint="Email or Username"
+              android:hint="@string/Email"
               android:singleLine="true"
               android:inputType="textEmailAddress"
               android:background="@drawable/sign_in_edit_bg"/>   
@@ -86,9 +86,9 @@
               android:layout_height="wrap_content"
               android:layout_width="match_parent"
              android:paddingLeft="33dp"
-             android:textSize="28sp"
+             android:textSize="@dimen/larg_text_size"
              android:textColor="#000"
-              android:hint="Password"
+              android:hint="@string/Password"
               android:inputType="textPassword"
               android:layout_marginTop="20dp"
               android:singleLine="true"
@@ -103,8 +103,8 @@
                  android:id="@+id/sign_in_next"
                  android:layout_height="wrap_content"
                  android:layout_width="wrap_content"
-                 android:text="Next"
-                 android:textSize="28sp"
+                 android:text="@string/Next"
+                 android:textSize="@dimen/larg_text_size"
                  android:layout_marginRight="14dp"
                  android:layout_marginTop="30dp"
                  android:textColor="#fff"/>
@@ -119,9 +119,9 @@
               android:layout_height="wrap_content"
               android:layout_width="wrap_content"
              android:paddingLeft="33dp"
-             android:textSize="28sp"
+             android:textSize="@dimen/larg_text_size"
              android:textColor="#0000FF"
-              android:text="Forgot Password"
+              android:text="@string/Forgot_Password"
               android:layout_marginTop="20dp"
              />    
          </LinearLayout>

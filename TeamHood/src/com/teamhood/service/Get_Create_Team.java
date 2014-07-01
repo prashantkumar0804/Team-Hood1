@@ -118,6 +118,7 @@ public class Get_Create_Team extends AsyncTask<String , Integer, Void>{
 						SharedPreferences.Editor editer4 = sp.edit();
 						editer4.putString("team_id", object1.getString("team_id"));
 						editer4.putString("team_name",team_name);
+						editer4.putString("company_name", company_name);
 						editer4.putString("AddType", "team_member");
 						editer4.commit();
 						Intent intent=new Intent(ctx,Invite_Team.class);

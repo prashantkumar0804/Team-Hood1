@@ -115,16 +115,13 @@ public class Invite_Team extends Activity implements OnClickListener {
 			//		email_text.setTextColor(Color.parseColor("#000"));
 			email_text.setId(Count);
 			email_text.setTextColor(Color.BLACK);
-			email_text.setTextSize(28);
+//			email_text.setTextSize(getResources().getDimension(R.dimen.small_text_size));
 			email_text.setSingleLine();
 			if(firstTime==1){
 				email_text.setFocusable(true);
-			}
+			} 
 
 			email_text.setLayoutParams(emailparams);
-
-
-
 
 			invite_team_main_lay.addView(email_text);
 
@@ -150,7 +147,8 @@ public class Invite_Team extends Activity implements OnClickListener {
 				startActivity(intent);
 
 				overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right );
-				finish();}
+				finish();
+				}
 			if(sp.getString("AddType", "").equalsIgnoreCase("team_member")){
 				Intent intent=new Intent(Invite_Team.this,Team_Leader_invite_Team_mamber.class);
 				startActivity(intent);
@@ -170,14 +168,16 @@ public class Invite_Team extends Activity implements OnClickListener {
 					for(int i=0;i<=Count;i++){
 
 						EditText tx=(EditText) Invite_Team.this.findViewById(i);
-						
+						if(tx.getText().toString().length()>0){
 						Edit_Value.add(tx.getText().toString());
+						}
 						
 					}
 				} catch (Exception e) {
 					// TODO: handle exception
 				}
 				Log.d("array", Edit_Value.toString());
+				
 				new Get_Invite_leaders(Invite_Team.this,sp.getString("username", ""),sp.getString("company_name", ""),bar,sp,Edit_Value.toString()).execute("main");
 			}
 			if(sp.getString("AddType", "").equalsIgnoreCase("team_member")){
@@ -187,8 +187,9 @@ public class Invite_Team extends Activity implements OnClickListener {
 					for(int i=0;i<=Count;i++){
 
 						EditText tx=(EditText) Invite_Team.this.findViewById(i);
-						
+						if(tx.getText().toString().length()>0){
 						Edit_Value.add(tx.getText().toString());
+						}
 						
 					}
 				} catch (Exception e) {

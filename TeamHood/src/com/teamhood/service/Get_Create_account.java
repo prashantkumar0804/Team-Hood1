@@ -122,6 +122,7 @@ public class Get_Create_account  extends AsyncTask<String , Integer, Void>{
 							}
 							SharedPreferences.Editor editer4 = sp.edit();
 							editer4.putString("username", username);
+							editer4.putString("password", password);
 							editer4.putString("id", object1.getString("id"));
 							editer4.commit();
 							Intent intent=new Intent(ctx,Create_Account.class);

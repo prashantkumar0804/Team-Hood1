@@ -40,7 +40,7 @@
                     android:layout_width="wrap_content"
                    android:text="Profile"
                    android:textColor="#000"
-                   android:textSize="@dimen/activity_horizontal_margin"/>
+                   android:textSize="@dimen/larg_text_size"/>
             </LinearLayout>
              <LinearLayout 
                 android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
                      android:text="Prashant"
                     android:singleLine="true"
                      android:textColor="#db4d2e"
-                     android:textSize="@dimen/activity_horizontal_margin"/>
+                     android:textSize="@dimen/larg_text_size"/>
              </LinearLayout>
               <LinearLayout 
             android:layout_height="1dp"
@@ -124,7 +124,7 @@
                      android:text="Applify Android Team"
                     android:singleLine="true"
                      android:textColor="#db4d2e"
-                     android:textSize="@dimen/activity_horizontal_margin"/>
+                     android:textSize="@dimen/larg_text_size"/>
              </LinearLayout>
               <LinearLayout 
             android:layout_height="1dp"
@@ -167,7 +167,7 @@
                     android:singleLine="true"
                      
                      android:textColor="#db4d2e"
-                     android:textSize="@dimen/activity_horizontal_margin"/>
+                     android:textSize="@dimen/larg_text_size"/>
                  </LinearLayout>
              </LinearLayout>
              

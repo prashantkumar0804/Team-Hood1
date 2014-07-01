@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@android:color/transparent" >
     
 
     <LinearLayout 
@@ -15,6 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:gravity="center_vertical"
+            android:baselineAligned="false"
             android:orientation="horizontal">
             <LinearLayout 
                 android:layout_height="wrap_content"
@@ -25,6 +27,7 @@
                     android:id="@+id/all_files_back"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
+                   
                     android:background="@drawable/back_oreng"/>
             </LinearLayout>
              <LinearLayout 
@@ -38,9 +41,9 @@
                     android:id="@+id/all_files_header"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                   android:text="All Files"
+                   android:text="@string/All_Files"
                    android:textColor="#000"
-                   android:textSize="@dimen/activity_horizontal_margin"/>
+                   android:textSize="@dimen/larg_text_size"/>
             </LinearLayout>
              <LinearLayout 
                 android:layout_height="wrap_content"
@@ -69,6 +72,7 @@
         <LinearLayout 
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:baselineAligned="false"
             android:orientation="horizontal">
             <LinearLayout 
                 android:id="@+id/All_files_Byeveryone_lay"
@@ -82,8 +86,8 @@
                     android:id="@+id/All_files_Byeveryone"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="By Everyone"
-                    android:textSize="@dimen/activity_horizontal_margin"
+                    android:text="@string/By_Everyone"
+                    android:textSize="@dimen/larg_text_size"
                     android:textColor="#db4d2e"/>
             </LinearLayout>
              <LinearLayout 
@@ -98,8 +102,8 @@
                     android:id="@+id/All_files_Byyou"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="By You"
-                    android:textSize="@dimen/activity_horizontal_margin"
+                    android:text="@string/By_You"
+                    android:textSize="@dimen/larg_text_size"
                     android:textColor="#000"/>
             </LinearLayout>
              <LinearLayout 
@@ -137,7 +141,7 @@
                  android:layout_height="match_parent"
                  android:layout_width="match_parent">
                  <LinearLayout 
-                     android:layout_height="match_parent"
+                     android:layout_height="wrap_content"
                      android:layout_width="match_parent"
                      android:orientation="vertical">
                      

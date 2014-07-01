@@ -16,21 +16,26 @@
             android:layout_width="match_parent"
             android:gravity="center_vertical"
             android:orientation="horizontal">
-            <LinearLayout 
-                android:layout_height="wrap_content"
+
+            <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:layout_weight="1">
+                android:layout_weight="1.5" >
+
             <ImageView
                  android:id="@+id/team_member_list_back"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:background="@drawable/back_oreng"/>
             </LinearLayout>
-             <LinearLayout 
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:layout_weight="1">
+
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center"
+                 android:layout_weight="1" >
+
             <TextView 
                 android:id="@+id/team_member_list_header_text"
                 android:layout_height="wrap_content"
@@ -39,15 +44,17 @@
                 android:layout_marginBottom="20dp"
                 android:text="Team Members"
                 android:textColor="#000"
-                android:textSize="@dimen/activity_horizontal_margin"
+                android:textSize="@dimen/larg_text_size"
                 />
             </LinearLayout>
-             <LinearLayout 
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:gravity="right"
+
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
                  android:layout_marginRight="30dp"
-                android:layout_weight="1">
+                 android:layout_weight="1.5"
+                 android:gravity="right" >
+
             <ImageView 
                 android:id="@+id/team_member_list_search"
                 android:layout_height="wrap_content"

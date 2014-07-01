@@ -24,7 +24,7 @@
             android:background="@drawable/back_button"/>
     </LinearLayout>
  <LinearLayout 
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:gravity="center"
@@ -36,12 +36,13 @@
 
    
         </LinearLayout>
-         <LinearLayout 
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        >
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_weight="1"
+             android:orientation="vertical" >
+
          <TextView 
              android:id="@+id/invite_text_one"
              android:layout_height="wrap_content"
@@ -49,7 +50,7 @@
              android:text="Create a new account with :"
              android:textColor="#fff"
              android:layout_marginLeft="30dp"
-             android:textSize="28sp"/>
+             android:textSize="@dimen/larg_text_size"/>
          <TextView 
              android:id="@+id/invite_text_email"
              android:layout_height="wrap_content"
@@ -57,13 +58,13 @@
              android:text="prashant@gmail.com"
              android:textColor="#fff"
              android:layout_marginLeft="30dp"
-             android:textSize="28sp"/>
+             android:textSize="@dimen/larg_text_size"/>
          <EditText 
              android:id="@+id/invite_password"
               android:layout_height="wrap_content"
               android:layout_width="match_parent"
              android:paddingLeft="33dp"
-             android:textSize="28sp"
+             android:textSize="@dimen/larg_text_size"
              android:textColor="#000"
              android:singleLine="true"
              android:layout_marginTop="10dp"
@@ -82,7 +83,7 @@
              android:text="By tapping Create Account, I agree to the"
              android:textColor="#000"
              android:layout_marginLeft="30dp"
-             android:textSize="20sp"/>
+             android:textSize="@dimen/small_text_size"/>
             <TextView 
              android:id="@+id/invite_text_third"
              android:layout_height="wrap_content"
@@ -91,7 +92,7 @@
            
              android:textColor="#000"
             
-             android:textSize="20sp"/>
+             android:textSize="@dimen/small_text_size"/>
         </LinearLayout>
          <TextView 
              android:id="@+id/invite_text_four"
@@ -101,7 +102,7 @@
            
              android:textColor="#000"
             android:layout_marginLeft="30dp"
-             android:textSize="20sp"/>
+             android:textSize="@dimen/small_text_size"/>
          <ImageView 
              android:layout_height="wrap_content"
              android:layout_width="match_parent"
@@ -117,7 +118,7 @@
                  android:layout_width="wrap_content"
                  android:text="Create Account"
                  android:textColor="#fff"
-                 android:textSize="28sp"
+                 android:textSize="@dimen/larg_text_size"
                  android:layout_marginRight="30dp"
                  android:layout_marginTop="10dp"/>
              

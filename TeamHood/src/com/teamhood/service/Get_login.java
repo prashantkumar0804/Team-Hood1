@@ -76,7 +76,7 @@ public class Get_login extends AsyncTask<String , Integer, Void>{
 				HttpResponse response = httpclient.execute(httppost);
 				responseString = new BasicResponseHandler().handleResponse(response);
 				System.out.println(responseString);
-
+  
 			} catch (ClientProtocolException e) {
 				// TODO Auto-generated catch block
 			} catch (IOException e) {
@@ -105,6 +105,7 @@ public class Get_login extends AsyncTask<String , Integer, Void>{
 						}
 						SharedPreferences.Editor editer4 = sp.edit();
 						editer4.putString("username", username);
+						editer4.putString("password", password);
 						editer4.commit();
 
 						Intent intent=new Intent(ctx,Invite_Screen.class);
@@ -118,17 +119,27 @@ public class Get_login extends AsyncTask<String , Integer, Void>{
 						if(bar.isShowing()){
 							bar.dismiss();
 						}
+						
+						
 						SharedPreferences.Editor editer4 = sp.edit();
 						editer4.putString("id", object1.getString("id"));
-						editer4.putString("username", object1.getString("username"));
-						editer4.putString("created", object1.getString("created"));
-						editer4.putString("status", object1.getString("status"));
-						editer4.putString("company_name", object1.getString("company_name"));
+						editer4.putString("username", object1.getString("email"));
 						editer4.putString("email", object1.getString("email"));
-						editer4.putString("lavel", object1.getString("lavel"));
-						editer4.putString("password", object1.getString("password"));
-						editer4.putString("modified", object1.getString("modified"));
-						editer4.putString("parent_id", object1.getString("parent_id"));
+						
+						editer4.putString("company_name", object1.getString("company_name"));
+						editer4.putString("company_id", object1.getString("company_id"));
+						editer4.putString("team_name", object1.getString("team_name"));
+						editer4.putString("team_id", object1.getString("team_id"));
+						editer4.putString("message", object1.getString("message"));
+						editer4.putString("sending_time", object1.getString("sending_time"));
+						editer4.putString("timebomb_message_id", object1.getString("timebomb_message_id"));
+						editer4.putString("task", object1.getString("task"));
+						
+						editer4.putString("timebomb_task_time", object1.getString("timebomb_task_time"));
+						editer4.putString("timebomb_task_id", object1.getString("timebomb_task_id"));
+						
+						
+						
 						editer4.commit();
 						Intent intent=new Intent(ctx,Dash_Board.class);
 

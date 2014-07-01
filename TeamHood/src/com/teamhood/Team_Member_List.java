@@ -56,7 +56,7 @@ public class Team_Member_List extends Activity implements OnClickListener{
 		team_member_list_header_one.setTypeface(font);
 		team_member_list_team_name_list=(LinearLayout)findViewById(R.id.team_member_list_team_name_list);
 		
-		new Get_Team_member_list(Team_Member_List.this,sp.getString("username", ""),sp.getString("company_id", ""),sp.getString("team_id", ""),bar,sp).execute("main");
+		new Get_Team_member_list(Team_Member_List.this,sp.getString("email", ""),sp.getString("company_id", ""),sp.getString("team_id", ""),bar,sp).execute("main");
 		
 	}
 	@Override

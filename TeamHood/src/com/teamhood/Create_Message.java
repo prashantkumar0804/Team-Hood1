@@ -1,5 +1,6 @@
 package com.teamhood;
 
+import java.io.ByteArrayOutputStream;
 import java.util.Calendar;
 
 import android.app.Activity;
@@ -10,10 +11,13 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -48,7 +52,7 @@ public class Create_Message extends Activity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setSoftInputMode(
-				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
 		setContentView(R.layout.create_message);
 		
 		sp = this.getSharedPreferences("TeamHood", MODE_PRIVATE);
@@ -61,6 +65,13 @@ public class Create_Message extends Activity implements OnClickListener{
 		create_message_cencel.setOnClickListener(this);
 		create_message_header_text=(TextView)findViewById(R.id.create_message_header_text);
 		create_message_header_text.setTypeface(font2);
+		if(sp.getString("Time_bomb_screen", "").equalsIgnoreCase("message")){
+			
+			create_message_header_text.setText("Message");
+			}else if(sp.getString("Time_bomb_screen", "").equalsIgnoreCase("task")){
+				create_message_header_text.setText("Task");
+					
+			}
 		create_message_depoly=(TextView)findViewById(R.id.create_message_depoly);
 		create_message_depoly.setTypeface(font2);
 		create_message_depoly.setOnClickListener(this);
@@ -92,7 +103,9 @@ public class Create_Message extends Activity implements OnClickListener{
   
 		case R.id.create_message_depoly:
 			if(!First_editText.trim().equalsIgnoreCase("")){
+				
 			if(sp.getString("Time_bomb_screen", "").equalsIgnoreCase("message")){
+				
 			new Get_Time_bomb_message(Create_Message.this, bar, sp.getString("username", ""), sp.getString("company_id", ""), sp.getString("team_id", ""), create_message_edit.getText().toString().trim(), First_editText, sp.getString("sender_email", ""), sp).execute("main");
 			}else if(sp.getString("Time_bomb_screen", "").equalsIgnoreCase("task")){
 				new Get_Time_bomb_task(Create_Message.this, bar, sp.getString("username", ""), sp.getString("company_id", ""), sp.getString("team_id", ""), create_message_edit.getText().toString().trim(), First_editText, sp.getString("sender_email", ""), sp).execute("main");
@@ -264,12 +277,23 @@ public class Create_Message extends Activity implements OnClickListener{
 			BitmapFactory.Options o2 = new BitmapFactory.Options();
 			o2.inSampleSize = scale;
 			try {
-
+				final	Matrix mat = new Matrix();
+				
 				bitmap = BitmapFactory.decodeFile(filePath, o2);
+				bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
+						bitmap.getHeight(), mat, true);
+				ByteArrayOutputStream baos = new ByteArrayOutputStream();
+				bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);   
+				byte[] b = baos.toByteArray(); 
+
+				String encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
+				Log.d("bitmap", encodedImage);
+				
 				
 			} catch (OutOfMemoryError e) {
 				o2.inSampleSize = 2;
 				bitmap = BitmapFactory.decodeFile(filePath, o2);
+				
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

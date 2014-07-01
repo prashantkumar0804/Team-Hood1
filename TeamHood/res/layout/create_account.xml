@@ -27,8 +27,8 @@
           android:layout_width="wrap_content"
           android:layout_marginLeft="30dp"
           android:textColor="#fff"
-          android:textSize="28dp"
-          android:text="Now that you have an account, lets get you\nstarted by createing a :"/>
+          android:textSize="@dimen/midel_text_size"
+          android:text="@string/create_account_first_header"/>
       <TextView
           android:id="@+id/create_company"
           android:layout_height="wrap_content"
@@ -36,9 +36,9 @@
           android:layout_marginLeft="30dp"
           android:layout_marginRight="30dp"
           android:layout_marginTop="20dp"
-         android:text="COMPANY"
+         android:text="@string/COMPANY"
           android:gravity="center"
-          android:textSize="28sp"
+          android:textSize="@dimen/larg_text_size"
           android:textColor="#db4d2e"
           android:background="@drawable/white_edit_text"
           />
@@ -49,9 +49,9 @@
           android:layout_marginLeft="30dp"
           android:layout_marginRight="30dp"
           android:layout_marginTop="10dp"
-          android:text="TEAM"
+          android:text="@string/TEAM"
           android:gravity="center"
-          android:textSize="28sp"
+          android:textSize="@dimen/larg_text_size"
            android:textColor="#db4d2e"
           android:background="@drawable/white_edit_text"
           />
