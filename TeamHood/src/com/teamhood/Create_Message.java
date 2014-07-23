@@ -31,6 +31,7 @@ import android.widget.Toast;
 
 import com.teamhood.service.Get_Time_bomb_message;
 import com.teamhood.service.Get_Time_bomb_task;
+import com.teamhood.service.Sharing_file_api;
 
 public class Create_Message extends Activity implements OnClickListener{
 
@@ -46,6 +47,7 @@ public class Create_Message extends Activity implements OnClickListener{
 	private static final int PICK_IMAGE = 1;
 	Uri imageUri;
 	Bitmap bitmap;
+	String encodedImage;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -105,8 +107,10 @@ public class Create_Message extends Activity implements OnClickListener{
 			if(!First_editText.trim().equalsIgnoreCase("")){
 				
 			if(sp.getString("Time_bomb_screen", "").equalsIgnoreCase("message")){
-				
+//			new Sharing_file_api(Create_Message.this, bar, sp.getString("username", ""), sp.getString("company_id", ""), sp.getString("team_id", ""), create_message_edit.getText().toString().trim(), First_editText, sp.getString("sender_email", ""), sp,encodedImage).execute("main");
+					
 			new Get_Time_bomb_message(Create_Message.this, bar, sp.getString("username", ""), sp.getString("company_id", ""), sp.getString("team_id", ""), create_message_edit.getText().toString().trim(), First_editText, sp.getString("sender_email", ""), sp).execute("main");
+			
 			}else if(sp.getString("Time_bomb_screen", "").equalsIgnoreCase("task")){
 				new Get_Time_bomb_task(Create_Message.this, bar, sp.getString("username", ""), sp.getString("company_id", ""), sp.getString("team_id", ""), create_message_edit.getText().toString().trim(), First_editText, sp.getString("sender_email", ""), sp).execute("main");
 					
@@ -286,7 +290,7 @@ public class Create_Message extends Activity implements OnClickListener{
 				bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);   
 				byte[] b = baos.toByteArray(); 
 
-				String encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
+				encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
 				Log.d("bitmap", encodedImage);
 				
 				

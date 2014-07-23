@@ -1,6 +1,6 @@
 package com.teamhood;
 
-import com.teamhood.service.Get_Team_member_list;
+import java.util.ArrayList;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -8,23 +8,30 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Display;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import com.teamhood.model.Member_List_Model;
+import com.teamhood.service.Get_Team_member_list;
 
 public class Team_Member_List extends Activity implements OnClickListener{
 
 	ImageView team_member_list_back,team_member_list_search;
 	TextView team_member_list_header_text,team_member_list_header_one;
-	LinearLayout team_member_list_team_name_list,team_member_list;
+	LinearLayout team_member_list;
+	ListView team_member_list_team_name_list;
 	SharedPreferences sp;
 	ProgressDialog bar;
 	int w,h;
+	public static ArrayList<Member_List_Model> Member_List_arrayList=new ArrayList<Member_List_Model>();
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -54,9 +61,9 @@ public class Team_Member_List extends Activity implements OnClickListener{
 		team_member_list_search=(ImageView)findViewById(R.id.team_member_list_search);
 		team_member_list_header_one=(TextView)findViewById(R.id.team_member_list_header_one);
 		team_member_list_header_one.setTypeface(font);
-		team_member_list_team_name_list=(LinearLayout)findViewById(R.id.team_member_list_team_name_list);
+		team_member_list_team_name_list=(ListView)findViewById(R.id.team_member_list_team_name_list);
 		
-		new Get_Team_member_list(Team_Member_List.this,sp.getString("email", ""),sp.getString("company_id", ""),sp.getString("team_id", ""),bar,sp).execute("main");
+		new Get_Team_member_list(Team_Member_List.this,sp.getString("email", ""),sp.getString("company_id", ""),sp.getString("team_id", ""),bar,sp,w,h,team_member_list_team_name_list).execute("main");
 		
 	}
 	@Override

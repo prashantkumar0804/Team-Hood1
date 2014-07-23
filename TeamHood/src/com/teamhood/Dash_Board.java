@@ -6,12 +6,20 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -21,6 +29,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -29,7 +38,7 @@ import com.example.sliderclass.ExpandAnimation;
 
 public class Dash_Board extends Activity implements OnClickListener, OnTouchListener{
 
-	Button dash_board_setting;
+	ImageView dash_board_setting;
 	ImageView dashboard_time_bomb,dashboard_direct_chat,dashboard_files_sharing,dashboard_my_profile,dashboard_my_team;
 	TextView dashboard_timebomb_text,dashboard_direct_chat_text,dashboard_file_sharing_text,dashboard_my_profile_text,dashboard_my_team_text,dashboard_chat_header_text
 	,dashboard_chat_view_text,dashboard_task_header_text,dashboard_task_view_text,dashboard_happy,dashboard_hoderate,dashboard_sad,dashboard_notes_header_text
@@ -40,9 +49,13 @@ public class Dash_Board extends Activity implements OnClickListener, OnTouchList
 	DisplayMetrics metrics;
 	private boolean isExpanded=true;
 	RelativeLayout menuPanel,dots_menuPanel;
-	ImageButton leads_sidebar,leads_dots_menu;
+	ImageButton leads_sidebar,leads_dots_menu; 
 	FrameLayout.LayoutParams menuPanelParameters,slidingPanelParameters;
 	LinearLayout slidingPanel;
+	
+	ViewPager pager;
+	String[] imageUrls={"1","2","3","4"};
+	int pos;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -74,7 +87,7 @@ public class Dash_Board extends Activity implements OnClickListener, OnTouchList
 		slidingPanel.setLayoutParams(slidingPanelParameters);
 		slidingPanel.setOnTouchListener(Dash_Board.this);
 		
-		dash_board_setting=(Button)findViewById(R.id.dash_board_setting);
+		dash_board_setting=(ImageView)findViewById(R.id.dash_board_setting);
 		dash_board_setting.setOnClickListener(this);
 		dashboard_time_bomb=(ImageView)findViewById(R.id.dashboard_time_bomb);
 		dashboard_time_bomb.setOnClickListener(this);
@@ -118,8 +131,13 @@ public class Dash_Board extends Activity implements OnClickListener, OnTouchList
 		dash_board_getStarted=(TextView)findViewById(R.id.dash_board_getStarted);
 		dash_board_getStarted.setTypeface(font);
 		
+		/*pager = (ViewPager) findViewById(R.id.pager);
+		pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+		pager.setCurrentItem(pos);*/
+		
 //		new Get_login(Dash_Board.this, pro,sp.getString("username", ""),sp.getString("password", ""),sp).execute("main");
 	}
+	
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
@@ -192,7 +210,78 @@ public class Dash_Board extends Activity implements OnClickListener, OnTouchList
 			break;
 		}
 	}
+	/*private class MyPagerAdapter extends FragmentPagerAdapter {
 
+        public MyPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int pos) {
+            switch(pos) {
+
+            case 0: return FirstFragment.newInstance("FirstFragment, Instance 1");
+            case 1: return SecondFragment.newInstance("SecondFragment, Instance 1");
+            case 2: return ThirdFragment.newInstance("ThirdFragment, Instance 1");
+            case 3: return ThirdFragment.newInstance("ThirdFragment, Instance 2");
+            case 4: return ThirdFragment.newInstance("ThirdFragment, Instance 3");
+            default: return ThirdFragment.newInstance("ThirdFragment, Default");
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return 5;
+        }       
+    }
+	private class ImagePagerAdapter extends PagerAdapter {
+
+		private String[] images;
+		private LayoutInflater inflater;
+
+		ImagePagerAdapter(String[] images) {
+			this.images = images;
+			inflater = getLayoutInflater();
+		}
+
+		@Override
+		public void destroyItem(ViewGroup container, int position, Object object) {
+			container.removeView((View) object);
+		}
+
+		@Override
+		public int getCount() {
+			return images.length;
+		}
+
+		@Override
+		public Object instantiateItem(ViewGroup view, int position) {
+
+			View imageLayout = inflater.inflate(R.layout.item_pager_image, view, false);
+			assert imageLayout != null;
+			TextView textView = (TextView) imageLayout.findViewById(R.id.image);
+			final ProgressBar spinner = (ProgressBar) imageLayout.findViewById(R.id.loading); 
+			textView.setText(imageUrls[position]);
+				
+			
+			view.addView(imageLayout, 0);
+			return imageLayout;
+		}
+
+		@Override
+		public boolean isViewFromObject(View view, Object object) {
+			return view.equals(object);
+		}
+
+		@Override
+		public void restoreState(Parcelable state, ClassLoader loader) {
+		}
+
+		@Override
+		public Parcelable saveState() {
+			return null;
+		}
+	}*/
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub

@@ -23,11 +23,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.teamhood.Dash_Board;
-import com.teamhood.Invite_Team;
 import com.teamhood.R;
+import com.teamhood.Team_Member_List;
+import com.teamhood.model.Member_List_Adapter;
+import com.teamhood.model.Member_List_Model;
 
 public class Get_Team_member_list extends AsyncTask<String , Integer, Void>{
 
@@ -37,8 +40,10 @@ public class Get_Team_member_list extends AsyncTask<String , Integer, Void>{
 	ProgressDialog bar;
 	String responseString;
 	SharedPreferences sp;
-
-	public Get_Team_member_list(Context ctx,String username,String company_id, String Team_id, ProgressDialog bar, SharedPreferences sp) {
+	int h,w;
+	Member_List_Adapter Member_List_adp;
+	ListView team_member_list_team_name_list;
+	public Get_Team_member_list(Context ctx,String username,String company_id, String Team_id, ProgressDialog bar, SharedPreferences sp,int w,int h,ListView team_member_list_team_name_list) {
 		// TODO Auto-generated constructor stub
 		this.ctx=ctx;
 		this.bar=bar;
@@ -47,6 +52,9 @@ public class Get_Team_member_list extends AsyncTask<String , Integer, Void>{
 		this.sp=sp;
 		this.email_list=email_list;
 		this.Team_id=Team_id;
+		this.w=w;
+		this.h=h;
+		this.team_member_list_team_name_list=team_member_list_team_name_list;
 	}
 
 	@Override
@@ -120,20 +128,31 @@ public class Get_Team_member_list extends AsyncTask<String , Integer, Void>{
 					}else{
 						JSONObject object1 = (JSONObject) new JSONTokener(str1).nextValue();
 
-						if(bar.isShowing()){
-							bar.dismiss();
-						}
+						
 						SharedPreferences.Editor editer4 = sp.edit();
 						editer4.putString("team_member_email", object1.getString("team_member_email"));
 						
 						editer4.commit();
 						String str2[]=object1.getString("team_member_email").split(",");
-						Log.d("email", str2[0]+"/"+str2[1]);
-						Intent intent=new Intent(ctx,Dash_Board.class);
+						for(int i=0;i<str2.length;i++){
+							Member_List_Model  Member_List_obj=new Member_List_Model();
+							Member_List_obj.setMember_id(i+"");
+							Member_List_obj.setMember_email(str2[i]);
+							Log.d("email", str2[i]);
+							Team_Member_List.Member_List_arrayList.add(Member_List_obj);
+							Member_List_adp=new Member_List_Adapter(ctx, Team_Member_List.Member_List_arrayList,w,h,preferences);
+							
+						}
+						
+						team_member_list_team_name_list.setAdapter(Member_List_adp);
+						if(bar.isShowing()){
+							bar.dismiss();
+						}
+						/*Intent intent=new Intent(ctx,Dash_Board.class);
 
 						ctx.startActivity(intent);
 						((Activity) ctx).overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
-						((Activity) ctx).finish();
+						((Activity) ctx).finish();*/
 
 
 					}

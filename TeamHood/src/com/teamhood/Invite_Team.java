@@ -115,6 +115,7 @@ public class Invite_Team extends Activity implements OnClickListener {
 			//		email_text.setTextColor(Color.parseColor("#000"));
 			email_text.setId(Count);
 			email_text.setTextColor(Color.BLACK);
+			email_text.setTextSize(14);
 //			email_text.setTextSize(getResources().getDimension(R.dimen.small_text_size));
 			email_text.setSingleLine();
 			if(firstTime==1){

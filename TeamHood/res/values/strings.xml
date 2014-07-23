@@ -23,7 +23,7 @@
     <string name="create_account_first_header">Now that you have an account, lets get you\nstarted by createing a :</string>
     <string name="COMPANY">COMPANY</string>
     <string name="TEAM">TEAM</string>
-    <string name="Cencel">Cencel</string>
+    <string name="Cencel">Cancel</string>
     <string name="Message">Message</string>
     <string name="Depoly">Depoly</string>
     <string name="Type_screen_some_text">Type screen some text</string>
@@ -33,7 +33,7 @@
     <string name="My_Profile">My\nProfile</string>
     <string name="My_Team">My\nTeam</string>
     <string name="dash_chat">Applify Team Chat</string>
-    <string name="View">View</string>
+    <string name="View">view</string>
     <string name="Tasks">Tasks</string>
     <string name="Happy">Happy</string>
     <string name="Hoderate">Hoderate</string>

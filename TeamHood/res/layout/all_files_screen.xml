@@ -17,11 +17,13 @@
             android:layout_width="match_parent"
             android:gravity="center_vertical"
             android:baselineAligned="false"
+            android:background="@drawable/title_bar"
             android:orientation="horizontal">
             <LinearLayout 
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_marginLeft="30dp"
+               
+                android:gravity="left"
                 android:layout_weight="1">
                 <ImageView 
                     android:id="@+id/all_files_back"
@@ -33,8 +35,7 @@
              <LinearLayout 
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
+                
                 android:layout_width="match_parent"
                 android:layout_weight="1">
                 <TextView 
@@ -49,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:gravity="right|center_vertical"
-                android:layout_marginRight="30dp"
+                
                 android:layout_weight="1">
                 <ImageView 
                     android:id="@+id/all_files_search"

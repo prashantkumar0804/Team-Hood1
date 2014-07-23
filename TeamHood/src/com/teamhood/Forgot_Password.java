@@ -85,7 +85,7 @@ public class Forgot_Password extends Activity implements OnClickListener{
 			Intent intent=new Intent(Forgot_Password.this,MainActivity.class);
 			startActivity(intent);
 			overridePendingTransition(R.anim.slide_in_dwon, R.anim.slide_out_up);
-			//			 finish();
+			finish();
 			break;
 
 		case R.id.forgot_password_cross:
@@ -100,10 +100,10 @@ public class Forgot_Password extends Activity implements OnClickListener{
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		super.onBackPressed();
-		//		Intent intent=new Intent(Forgot_Password.this,MainActivity.class);
-		//     	startActivity(intent);
-		//		 overridePendingTransition(R.anim.slide_out_right, R.anim.slide_in_right );
-		//		 finish();
+		Intent intent=new Intent(Forgot_Password.this,MainActivity.class);
+		startActivity(intent);
+		overridePendingTransition(R.anim.slide_in_dwon, R.anim.slide_out_up);
+		finish();
 	}
 
 }

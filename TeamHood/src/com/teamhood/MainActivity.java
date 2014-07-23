@@ -108,7 +108,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 			startActivity(intent1);
 			overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_dwon);
-			//         	finish();
+			finish();
 
 
 			break;

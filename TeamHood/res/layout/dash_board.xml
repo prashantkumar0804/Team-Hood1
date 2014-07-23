@@ -4,45 +4,49 @@
     android:layout_height="match_parent"
     android:background="@drawable/orange_bg"
     android:orientation="vertical" >
- <include
+
+    <include
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         layout="@layout/menupanel" />
+
     <LinearLayout
         android:id="@+id/dash_board"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical" >
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+           
+            android:background="@drawable/title_bar"
             android:gravity="center_vertical"
             android:orientation="horizontal" >
 
-            <Button
+            <ImageView
                 android:id="@+id/dash_board_setting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/settings_icon" />
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/title_bar"
                 android:gravity="center_horizontal|center_vertical" >
 
-                <ImageView
+                <ImageView 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    
                     android:background="@drawable/logo_dashborad" />
             </LinearLayout>
-        </LinearLayout>
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+           
             android:background="@drawable/line" >
         </LinearLayout>
 
@@ -50,6 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:baselineAligned="false"
+            android:layout_marginTop="@dimen/small_margen"
             android:orientation="horizontal" >
 
             <LinearLayout
@@ -70,6 +75,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:layout_marginTop="@dimen/small_margen"
+                    android:textSize="@dimen/midel_text_size"
                     android:text="@string/Time_Bomb"
                     android:textColor="#000" >
                 </TextView>
@@ -93,6 +100,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:layout_marginTop="@dimen/small_margen"
+                    android:textSize="@dimen/midel_text_size"
                     android:text="@string/Direct_Chat"
                     android:textColor="#000" />
             </LinearLayout>
@@ -115,6 +124,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:layout_marginTop="@dimen/small_margen"
+                    android:textSize="@dimen/midel_text_size"
                     android:text="@string/Files_Sharing"
                     android:textColor="#000" />
             </LinearLayout>
@@ -137,6 +148,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:layout_marginTop="@dimen/small_margen"
+                    android:textSize="@dimen/midel_text_size"
                     android:text="@string/My_Profile"
                     android:textColor="#000" />
             </LinearLayout>
@@ -159,231 +172,273 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:layout_marginTop="@dimen/small_margen"
+                    android:textSize="@dimen/midel_text_size"
                     android:text="@string/My_Team"
                     android:textColor="#000" />
             </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
+        <ScrollView
+            android:id="@+id/scrollView1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/chat_notes_bg"
-            android:gravity="center_vertical"
-            android:orientation="horizontal" >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/chat_icon" />
-
-            <TextView
-                android:id="@+id/dashboard_chat_header_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/dash_chat"
-                android:textColor="#fff"
-                android:textSize="@dimen/midel_text_size" />
-
-            <TextView
-                android:id="@+id/dashboard_chat_view_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:text="@string/View"
-                android:textColor="#fff"
-                android:textSize="@dimen/midel_text_size" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/chat_notes_bg"
-            android:gravity="center_vertical"
-            android:orientation="horizontal" >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/task_icon" />
-
-            <TextView
-                android:id="@+id/dashboard_task_header_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/Tasks"
-                android:textColor="#fff"
-                android:textSize="@dimen/midel_text_size" />
-
-            <TextView
-                android:id="@+id/dashboard_task_view_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:text="@string/View"
-                android:textColor="#fff"
-                android:textSize="@dimen/midel_text_size" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:baselineAligned="false"
-            android:orientation="horizontal" >
+            android:layout_height="wrap_content" >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/smily_bg_left"
-                android:gravity="center" >
+                android:orientation="vertical" >
 
-                <TextView
-                    android:id="@+id/dashboard_happy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Happy"
-                    android:textColor="#000"
-                    android:textSize="@dimen/midel_text_size" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/smily_bg_mddle"
-                android:gravity="center" >
-
-                <TextView
-                    android:id="@+id/dashboard_hoderate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Hoderate"
-                    android:textColor="#000"
-                    android:textSize="@dimen/midel_text_size" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/smily_bg_rght"
-                android:gravity="center" >
-
-                <TextView
-                    android:id="@+id/dashboard_sad"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Sad"
-                    android:textColor="#000"
-                    android:textSize="@dimen/midel_text_size" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/chat_notes_bg"
-            android:gravity="center_vertical"
-            android:orientation="horizontal" >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/notes_icon" />
-
-            <TextView
-                android:id="@+id/dashboard_notes_header_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/Notes"
-                android:textColor="#fff"
-                android:textSize="@dimen/midel_text_size" />
-
-            <TextView
-                android:id="@+id/dashboard_notes_view_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:text="@string/View"
-                android:textColor="#fff"
-                android:textSize="@dimen/midel_text_size" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/dash_board_getStarted"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/Get_Started"
-            android:textColor="#fff"
-            android:textSize="@dimen/midel_text_size" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/white_bg"
-            android:baselineAligned="false"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="10dp" >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:background="@drawable/slide_icon" />
-            </LinearLayout>
+                    android:layout_marginTop="@dimen/larg_margen"
+                    android:background="@drawable/chat_notes_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/chat_icon" />
+
+                    <TextView
+                        android:id="@+id/dashboard_chat_header_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/dash_chat"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/midel_text_size" />
+
+                    <TextView
+                        android:id="@+id/dashboard_chat_view_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="@string/View"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/midel_text_size" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/view_next_button" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="@dimen/small_margen"
+                    android:background="@drawable/chat_notes_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/task_icon" />
+
+                    <TextView
+                        android:id="@+id/dashboard_task_header_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/Tasks"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/midel_text_size" />
+
+                    <TextView
+                        android:id="@+id/dashboard_task_view_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="@string/View"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/midel_text_size" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/view_next_button" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="@dimen/small_margen"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/smily_bg_left"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:id="@+id/dashboard_happy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Happy"
+                            android:textColor="#000"
+                            android:textSize="@dimen/midel_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/smily_bg_middle"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:id="@+id/dashboard_hoderate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Hoderate"
+                            android:textColor="#000"
+                            android:textSize="@dimen/midel_text_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/smily_bg_rght"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:id="@+id/dashboard_sad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Sad"
+                            android:textColor="#000"
+                            android:textSize="@dimen/midel_text_size" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="@dimen/small_margen"
+                    android:layout_weight="1"
+                    android:background="@drawable/chat_notes_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/notes_icon" />
+
+                    <TextView
+                        android:id="@+id/dashboard_notes_header_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/Notes"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/midel_text_size" />
+
+                    <TextView
+                        android:id="@+id/dashboard_notes_view_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="@string/View"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/midel_text_size" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/view_next_button" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/dash_board_getStarted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/Get_Started"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/midel_text_size" />
+
+           
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" >
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/white_bg"
+               
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp" >
 
-                <TextView
-                    android:id="@+id/dashboard_welcome_text"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/dash_botton_text"
-                    android:textColor="#db4d2e"
-                    android:textSize="@dimen/small_text_size" />
+                    android:orientation="vertical"
+                    android:layout_weight="3" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/slide_icon" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:id="@+id/dashboard_welcome_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dash_botton_text"
+                        android:textColor="#db4d2e"
+                        android:textSize="@dimen/small_text_size" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+  </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 
 </FrameLayout>

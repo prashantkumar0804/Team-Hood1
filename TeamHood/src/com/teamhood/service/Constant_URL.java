@@ -13,4 +13,5 @@ public class Constant_URL {
 	public static String Time_Bomb_Message="http://teamhood.applifytech.com/index.php/timeBombMessage";
 	public static String Time_Bomb_Task="http://teamhood.applifytech.com/index.php/timeBombTask";
 	public static String Get_profile="http://teamhood.applifytech.com/index.php/getProfile";
+	public static String FileSharing="http://teamhood.applifytech.com/index.php/fileSharing";
 }

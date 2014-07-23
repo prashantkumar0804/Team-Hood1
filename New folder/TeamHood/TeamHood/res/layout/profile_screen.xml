@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+
+    <LinearLayout 
+        android:id="@+id/profile_screen"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="#E0E0E0">
+        <LinearLayout 
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@drawable/title_bar">
+            <LinearLayout 
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="left"
+                android:layout_weight="1">
+                <ImageView 
+                    android:id="@+id/profile_screen_back"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/back_oreng"/>
+            </LinearLayout>
+             <LinearLayout 
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+               
+                android:layout_width="match_parent"
+                android:layout_weight="1">
+                <TextView 
+                    android:id="@+id/profile_screen_header"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                   android:text="Profile"
+                   android:textColor="#000"
+                   android:textSize="@dimen/larg_text_size"/>
+            </LinearLayout>
+             <LinearLayout 
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="right|center_vertical"
+               
+                android:layout_weight="1">
+               
+                <ImageView 
+                    android:id="@+id/profile_screen_edit"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/edit"/>
+            </LinearLayout>
+        </LinearLayout>
+         <LinearLayout 
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="@drawable/black_line">
+            
+        </LinearLayout>
+        
+         <LinearLayout 
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:layout_weight="1"
+             android:gravity="center"
+             android:orientation="vertical">
+              <ImageView
+                        android:id="@+id/image_employee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/demo_image" />
+         </LinearLayout>
+         <LinearLayout 
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="@drawable/black_line">
+            
+        </LinearLayout>
+          <LinearLayout 
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:layout_weight="1"
+             android:orientation="vertical"
+             android:layout_marginLeft="30dp"
+             android:layout_marginRight="30dp"
+             android:background="@drawable/white_bg">
+             <LinearLayout 
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center_vertical"
+                  android:layout_marginTop="20dp"
+                  android:layout_marginBottom="20dp"
+                     android:layout_marginRight="20dp"
+                     android:layout_marginLeft="20dp"
+                 android:orientation="vertical">
+                 <EditText 
+                     android:id="@+id/profile_screen_username"
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:text="Prashant"
+                    android:singleLine="true"
+                     android:textColor="#db4d2e"
+                    android:cursorVisible="false"
+                     android:textCursorDrawable="@drawable/color_cursor"
+                         android:background="#fff"
+                     android:textSize="@dimen/larg_text_size"/>
+             </LinearLayout>
+              <LinearLayout 
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="#db4d2e">
+            
+        </LinearLayout>
+        <LinearLayout 
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center_vertical"
+                  android:layout_marginTop="20dp"
+                  android:layout_marginBottom="20dp"
+                     android:layout_marginRight="20dp"
+                     android:layout_marginLeft="20dp"
+                 android:orientation="vertical">
+                 <TextView 
+                     android:id="@+id/profile_screen_TeamName"
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:text="Applify Android Team"
+                    android:singleLine="true"
+                     android:textColor="#db4d2e"
+                     android:textSize="@dimen/larg_text_size"/>
+             </LinearLayout>
+              <LinearLayout 
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="#db4d2e">
+            
+        </LinearLayout>
+        
+        <LinearLayout 
+                 android:layout_height="match_parent"
+                 android:layout_width="match_parent"
+                 android:gravity="center_vertical|bottom"
+                  
+                   
+                 android:orientation="vertical">
+                  <LinearLayout 
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="#db4d2e">
+            
+        </LinearLayout>
+        <LinearLayout 
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+             android:layout_marginRight="20dp"
+                     android:layout_marginLeft="20dp"
+                     android:layout_marginTop="20dp"
+                  android:layout_marginBottom="20dp"
+                  android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageView 
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:background="@drawable/notifications_icon"/>
+                 <TextView 
+                     android:id="@+id/profile_screen_noti"
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:text="Notification"
+                    android:singleLine="true"
+                     
+                     android:textColor="#db4d2e"
+                     android:textSize="@dimen/larg_text_size"/>
+                 </LinearLayout>
+             </LinearLayout>
+             
+         </LinearLayout>
+         
+    </LinearLayout>
+</LinearLayout>
