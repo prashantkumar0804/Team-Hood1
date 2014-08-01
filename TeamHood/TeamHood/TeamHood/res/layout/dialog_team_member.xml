@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#E0E0E0">
+    
+
+    <LinearLayout 
+        android:id="@+id/dialog_team_member"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+         <FrameLayout
+        android:id="@+id/sv_fram_lay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="10dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/sv_outer_lay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+             android:background="@drawable/orange_bg"
+                android:orientation="vertical" >
+			<LinearLayout 
+			    android:layout_height="wrap_content"
+			    android:layout_width="match_parent"
+			    android:layout_marginLeft="30dp"
+			    android:layout_marginRight="30dp"
+			    android:background="#E0E0E0"
+			    android:paddingTop="20dp"
+			    android:paddingBottom="20dp"
+			    android:orientation="vertical">
+			    <TextView
+			        android:id="@+id/dialog_team"
+			        android:layout_height="wrap_content"
+			        android:layout_width="match_parent"
+			        android:text="@string/Team"
+			       android:gravity="center_horizontal"
+			        android:textColor="#db4d2e"
+			        android:textSize="@dimen/larg_text_size"/>
+			   </LinearLayout>
+			   <LinearLayout 
+			    android:layout_height="wrap_content"
+			    android:layout_width="match_parent"
+			    android:layout_marginLeft="30dp"
+			    android:layout_marginTop="20dp"
+			    android:layout_marginRight="30dp"
+			    android:paddingTop="20dp"
+			    android:paddingBottom="20dp"
+			    android:background="#E0E0E0"
+			    android:orientation="vertical">
+			    <TextView
+			        android:id="@+id/dialog_direct"
+			        android:layout_height="wrap_content"
+			        android:layout_width="match_parent"
+			        android:text="@string/Direct"
+			        android:gravity="center_horizontal"
+			        android:textColor="#db4d2e"
+			        android:textSize="@dimen/larg_text_size"/>
+			</LinearLayout>
+               
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_cross_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right" >
+
+            <ImageView
+                android:id="@+id/view_cross"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cross" />
+        </LinearLayout>
+    </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

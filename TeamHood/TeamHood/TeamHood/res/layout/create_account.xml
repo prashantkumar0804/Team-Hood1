@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/orange_bg" >
+    
+  <LinearLayout 
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:layout_weight="1"
+      android:orientation="vertical"
+      android:gravity="center">
+       <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sign_in_logo" />
+  </LinearLayout>
+   <LinearLayout 
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:layout_weight="1"
+      android:orientation="vertical">
+      <TextView 
+          android:id="@+id/company_text"
+          android:layout_height="wrap_content"
+          android:layout_width="wrap_content"
+          android:layout_marginLeft="20dp"
+          android:textColor="#fff"
+          android:textSize="@dimen/midel_text_size"
+          android:text="@string/create_account_first_header"/>
+      <TextView
+          android:id="@+id/create_company"
+          android:layout_height="wrap_content"
+          android:layout_width="match_parent"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="20dp"
+          android:layout_marginTop="20dp"
+         android:text="@string/COMPANY"
+          android:gravity="center"
+          android:textSize="@dimen/larg_text_size"
+          android:textColor="#db4d2e"
+          android:background="@drawable/white_edit_text"
+          />
+      <TextView 
+          android:id="@+id/create_team"
+          android:layout_height="wrap_content"
+          android:layout_width="match_parent"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="20dp"
+          android:layout_marginTop="10dp"
+          android:text="@string/TEAM"
+          android:gravity="center"
+          android:textSize="@dimen/larg_text_size"
+           android:textColor="#db4d2e"
+          android:background="@drawable/white_edit_text"
+          />
+  </LinearLayout>
+</LinearLayout>

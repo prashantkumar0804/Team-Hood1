@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <LinearLayout 
+        android:id="@+id/invite_team"
+      android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/orange_bg"  >
+     <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="@drawable/title_bar">
+         <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_weight="1">
+        <ImageView 
+            android:id="@+id/invite_team_back"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+          
+         
+            android:background="@drawable/back_button"/>
+    </LinearLayout>
+     <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:gravity="right">
+        <ImageView 
+            android:id="@+id/invite_team_add_team"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+          
+            android:background="@drawable/plus"/>
+    </LinearLayout>
+</LinearLayout>
+     <LinearLayout 
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:layout_weight="2.5"
+         
+         android:gravity="center">
+         <ImageView 
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:background="@drawable/sign_in_logo"></ImageView>
+     </LinearLayout>
+     <LinearLayout 
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:layout_weight="1"
+         android:orientation="vertical"
+         >
+         <RelativeLayout 
+             android:layout_height="match_parent"
+             android:layout_width="match_parent">
+         <TextView 
+             android:id="@+id/invite_team_heder_text"
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:text="Enter the email of the team leaders you want to\ninvite and add them in you company tree."
+             android:textColor="#fff"
+             android:layout_marginLeft="20dp"
+             android:layout_marginRight="20dp"
+             android:textSize="@dimen/midel_text_size"/>
+         <ScrollView 
+             android:id="@+id/invite_team_scroll"
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+            android:layout_above="@+id/invite_team_next_lay"
+             android:layout_below="@+id/invite_team_heder_text"
+            >
+             <LinearLayout 
+                 android:layout_height="match_parent"
+                 android:layout_width="match_parent"
+                 android:orientation="vertical">
+                 <LinearLayout 
+                     android:id="@+id/invite_team_main_lay"
+                     android:layout_height="match_parent"
+                     android:layout_width="match_parent"
+                     android:orientation="vertical">
+                     
+                 </LinearLayout>
+        
+         </LinearLayout>
+         </ScrollView>
+         <LinearLayout 
+             android:id="@+id/invite_team_next_lay"
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:orientation="vertical"
+             android:gravity="right"
+             
+            android:layout_alignParentBottom="true"
+            >
+             <TextView 
+                 android:id="@+id/invite_team_next"
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:text="Next"
+                 android:textSize="@dimen/larg_text_size"
+                 android:textColor="#fff"
+                 android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                 />
+         </LinearLayout>
+         </RelativeLayout>
+     </LinearLayout>
+     </LinearLayout>
+</LinearLayout>

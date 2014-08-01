@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/transparent" >
+    
+
+    <LinearLayout 
+        android:id="@+id/all_files_screen"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="#E0E0E0">
+        <LinearLayout 
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:baselineAligned="false"
+            android:background="@drawable/title_bar"
+            android:orientation="horizontal">
+            <LinearLayout 
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+               
+                android:gravity="left"
+                android:layout_weight="1">
+                <ImageView 
+                    android:id="@+id/all_files_back"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                   
+                    android:background="@drawable/back_oreng"/>
+            </LinearLayout>
+             <LinearLayout 
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                
+                android:layout_width="match_parent"
+                android:layout_weight="1">
+                <TextView 
+                    android:id="@+id/all_files_header"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                   android:text="@string/All_Files"
+                   android:textColor="#000"
+                   android:textSize="@dimen/larg_text_size"/>
+            </LinearLayout>
+             <LinearLayout 
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="right|center_vertical"
+                
+                android:layout_weight="1">
+                <ImageView 
+                    android:id="@+id/all_files_search"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/search"/>
+                <ImageView 
+                    android:id="@+id/all_files_upload"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/upload"/>
+            </LinearLayout>
+        </LinearLayout>
+         <LinearLayout 
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="@drawable/black_line">
+            
+        </LinearLayout>
+        <LinearLayout 
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:background="@drawable/title_bar">
+            <LinearLayout 
+                android:id="@+id/All_files_Byeveryone_lay"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:background="#000"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView 
+                    android:id="@+id/All_files_Byeveryone"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/By_Everyone"
+                    android:textSize="@dimen/larg_text_size"
+                    android:textColor="#db4d2e"/>
+            </LinearLayout>
+             <LinearLayout 
+                 android:id="@+id/All_files_Byyou_lay"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#fff">
+                <TextView 
+                    android:id="@+id/All_files_Byyou"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/By_You"
+                    android:textSize="@dimen/larg_text_size"
+                    android:textColor="#000"/>
+            </LinearLayout>
+             <LinearLayout 
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_weight="1.5"
+                android:layout_marginLeft="10dp"
+                android:background="#fff"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView 
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/add_member_page"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout 
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="2">
+            
+        </LinearLayout>
+         <LinearLayout 
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/white_bg">
+            
+             <ScrollView 
+                 android:layout_height="match_parent"
+                 android:layout_width="match_parent">
+                 <LinearLayout 
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:orientation="vertical">
+                     
+                 </LinearLayout>
+             </ScrollView>
+             
+        </LinearLayout>
+    </LinearLayout>
+    
+</LinearLayout>
